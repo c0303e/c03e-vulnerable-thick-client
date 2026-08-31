@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  c03e configuration file.
+
+  INTENTIONALLY INSECURE (lab target):
+   - Plaintext DB connection string with embedded credentials.
+   - Plaintext API key.
+   - "Role" is read directly by the client to decide whether to show the
+     Admin Panel / Diagnostics screens. Change it to Admin and restart
+     the app; no server interaction required.
+-->
+<c03eConfig>
+  <Role>User</Role>
+  <Environment>Production</Environment>
+  <ApiKey>c03e-client-4471-CONFIG-KEY</ApiKey>
+  <DbConnectionString>Server=corp-sql01.c03e.local;Database=c03e_prod;User Id=c03e_app;Password=Autumn2024!;</DbConnectionString>
+  <UpdateUrl>http://127.0.0.1:5000/update/latest</UpdateUrl>
+</c03eConfig>

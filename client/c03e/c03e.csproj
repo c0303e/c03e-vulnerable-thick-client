@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>c03e</AssemblyName>
+    <RootNamespace>c03e</RootNamespace>
+
+    <!-- INTENTIONALLY VULNERABLE APPLICATION - FOR AUTHORIZED SECURITY TRAINING ONLY -->
+    <!-- Do not deploy outside an isolated lab environment -->
+
+    <!-- Allows BinaryFormatter usage (obsolete/dangerous in .NET 6+) on purpose, vuln #6 -->
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Config\c03e.config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
